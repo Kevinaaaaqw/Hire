@@ -7,7 +7,7 @@ class Link extends Component {
             <React.Fragment>
                 {this.props.route.map((item,index)=>{
                     return(
-                        <NavLink className='pe-3' to={item.link}>aaaa</NavLink>
+                        <NavLink className='pe-3' to={item.link}>{item.name}</NavLink>
                     )
                 })}
             </React.Fragment>
