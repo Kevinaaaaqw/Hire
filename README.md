@@ -1,6 +1,8 @@
 #  資策會結訓專案
 使用 React  RESTful API  後端 NodeJS
 
+我負責購物車以及聊天室(socket io)功能
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
