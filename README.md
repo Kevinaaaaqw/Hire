@@ -1,7 +1,7 @@
 #  資策會結訓專案
 使用 React  RESTful API  後端 NodeJS
 
-我負責購物車以及聊天室(socket io)功能
+我負責購物車以及聊天室(socket io)功能，串接綠界科技物流API
 
 # Getting Started with Create React App
 
