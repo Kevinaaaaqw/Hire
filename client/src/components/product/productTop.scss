@@ -2,22 +2,6 @@
 
 .category-section {
   margin-bottom: 30px;
-  .form-group {
-    position: relative;
-    display: inline-block;
-    margin-right: 10px; // 调整箭头与Select框之间的间距
-  }
-
-  // 向下箭头图标的样式
-  .arrow-icon {
-    position: absolute;
-    right: 20px; // 调整箭头位置
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    pointer-events: none; // 防止遮挡Select框的点击事件
-    color: #0000009f; // 设置箭头颜色
-  }
 
   #search-group {
     display: flex;
@@ -78,7 +62,6 @@
 
     > {
       select {
-        padding: 2px 0px 5px 5px;
         height: 50px;
         font-size: $font-normal;
         border: 1px solid rgb(51, 143, 185);

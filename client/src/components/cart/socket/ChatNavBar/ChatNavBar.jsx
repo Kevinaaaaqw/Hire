@@ -6,8 +6,7 @@ const ChatNavBar = ({productAccount,setShow}) => {
     <React.Fragment>
       <div
         style={{
-          backgroundColor: "#0B7597",
-          color:"white",
+          backgroundColor: "#97D7FA",
           borderRadius: "6px 6px 0px 0px",
           justifyContent: "space-between",
           display: "flex",
@@ -18,7 +17,7 @@ const ChatNavBar = ({productAccount,setShow}) => {
         <div>{productAccount}</div>
         <Button onClick={()=>{
           setShow("");
-        }} shape="circle" type="text" icon={<MessageOutlined style={{color:"white"}} />}></Button>
+        }} shape="circle" type="text" icon={<MessageOutlined />}></Button>
       </div>
     </React.Fragment>
   );

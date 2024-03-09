@@ -36,15 +36,11 @@ $paddingTop: 5vh;
     margin: $margin;
   }
 
-  .mctitle {
+  .title {
     color: $primaryColor;
     font-size: $largeFontSize;
     font-weight: bold;
     margin: $margin;
-    text-shadow: -1px -2px 0 #ffffff,
-              1px -1px 0 #ffffff,
-              -1px 1px 0 #ffffff,
-              1px 1px 0 #ffffff;
   }
 
   .btnset {
@@ -60,7 +56,7 @@ $paddingTop: 5vh;
     margin-right: 20px;
     font-size: $littleFontSize;
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 5px 10px;
 
     &.active {
@@ -372,5 +368,6 @@ $paddingTop: 5vh;
     display: inline-block;
     line-height: 1em;
   }
+
 
 }

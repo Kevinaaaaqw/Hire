@@ -3,18 +3,12 @@ import { Button, Checkbox, Form, Input, Col, Row, Carousel } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Googlehayaku from '../google-login/Googlehayaku'
-import AlertBox from '../product-item/AlertBox';
-
-// import Googlehayaku from '../google-login/Googlehayaku';  //google登入元件
 
 import "./login.scss"
 
 const Login = () => {
     const [account, setaccount] = useState('');
     const [password, setPassword] = useState('');
-    const [showAlert, setShowAlert] = useState(0);
-    const [messenger, setMessenger] = useState('');
     const history = useNavigate();
 
     const onFinish = async () => {
@@ -25,66 +19,43 @@ const Login = () => {
             });
 
             if (response.status === 200) {
+                console.log('ok');
+                const userInfo = `${account}`;
+                localStorage.setItem('userInfo', JSON.stringify(userInfo));
+                alert("登入成功")
+                history("/")
+                window.location.reload();
 
-                if (response.data.administratorok) {
-                    // 管理者
-                    console.log('管理者登入成功！')
-                    const userInfo = `${account}`;
-                    localStorage.setItem('userInfo', JSON.stringify(userInfo));
-                    setMessenger("管理者登入");
-                    setShowAlert(1);
-                    setTimeout(() => {
-                        window.location = "/Backstage"
 
-                        setShowAlert(0);
-                    }, 1000);
-                } else {
-                    console.log('ok');
-                    const userInfo = `${account}`;
-                    localStorage.setItem('userInfo', JSON.stringify(userInfo));
-                    setMessenger("登入成功")
-                    setShowAlert(1)
-                    setTimeout(() => {
-                        history("/")
-                        window.location.reload();
-                        setShowAlert(0);
-                    }, 1000)
-                }
+            } else if (response.status === 401) {
+                console.log('帳號或密碼錯');
+                alert("帳號或密碼錯誤 請重新輸入！")
             }
 
         } catch (error) {
-
-            if (error.request.status === 401) {
-                setMessenger("帳號或密碼錯誤 請重新輸入！")
-                setShowAlert(2)
-                setTimeout(() => { setShowAlert(0); }, 1000)
-            } else if (error.request.status === 403) {
-                setMessenger("帳號已被停權")
-                setShowAlert(2)
-                setTimeout(() => { setShowAlert(0); }, 1000)
-            }
+            console.error('请求失败:', error);
+            alert("帳號或密碼錯誤 請重新輸入！")
         }
     };
+
+
+
 
     return (
 
         <div id='loginout' >
-        
-            {showAlert === 1 && <AlertBox message={messenger} type="success" />}
-            {showAlert === 2 && <AlertBox message={messenger} type="warning" />}
-            {showAlert === 3 && <AlertBox message={messenger} type="warning" />}
             <Row id='login'>
                 <Col span={15}>
                     <Carousel autoplay className='Carousel' style={{ height: "100%" }}>
                         <div>
-                            <a href="http://localhost:3000/product"></a>
+                        <a href="http://localhost:3000/product"></a>
                             <img
                                 src="http://localhost:8000/img/login/1.png"
                                 alt="Carousel 1"
                             />
                         </div>
                         <div>
-                            <a href="http://localhost:3000/product"></a>
+                        <a href="http://localhost:3000/product"></a>
                             <img
                                 // style={contentStyle}
                                 src="http://localhost:8000/img/login/2.png"
@@ -149,33 +120,26 @@ const Login = () => {
                                 onChange={e => setPassword(e.target.value)} // 更新密码的状态
                             />
                         </Form.Item>
-
-                        <Form.Item name="remember" valuePropName="checked" noStyle>
-                            <div className='remember'>
+                        <Form.Item>
+                            <Form.Item name="remember" valuePropName="checked" noStyle>
                                 <Checkbox>記住我</Checkbox>
-                                <a href='/forget' className="login-form-forgot">忘記密碼嗎?</a>
-                            </div>
+                            </Form.Item>
+                            <span className="login-form-forgot">忘記密碼</span>
                         </Form.Item>
-
-
                         <Form.Item>
                             <Button
                                 type="primary"
                                 htmlType="submit"
                                 className="login-form-button"
-                                style={{ background: "#16778a", color: "#fff", width: "100%", height: "100%" }}
+                                style={{ background: "#16778a", color: "#fff", width: "75%",height:"100%" }}
                             >
                                 登入
                             </Button>
-
-
+                            或 <a href="/RegistrationForm">註冊</a>
                         </Form.Item>
-                        <div>快速登入</div><hr /><br />
-                        <Googlehayaku /><br />
                     </Form>
                 </Col>
             </Row>
-            {/* <Googlehayaku />元件 */}
         </div>
     );
 };

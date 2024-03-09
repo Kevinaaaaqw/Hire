@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Form, Input, Button, Steps, Carousel, Col, Row, DatePicker, Select } from 'antd';
+import { Form, Input, Button, Steps, Carousel, Col, Row, DatePicker, Select} from 'antd';
 import "./register.scss"
 import { Link } from 'react-router-dom';
-import AlertBox from '../product-item/AlertBox';
-
 
 const { Step } = Steps;
 
@@ -17,10 +15,6 @@ const Registration = () => {
   const [page1Data, setPage1Data] = useState({});
   const [page2Data, setPage2Data] = useState({});
   const [aldata, setaldata] = useState({})
-  const [showAlert, setShowAlert] = useState(0);
-  const [messenger, setMessenger] = useState('');
-
-
 
   useEffect(() => {
     if (currentStep === 2) {
@@ -38,7 +32,7 @@ const Registration = () => {
       postApi();
     }
   }, [aldata]);
-  // console.log(aldata)
+
   const handleNext = async (values) => {
     // console.log(values.username);
 
@@ -51,11 +45,8 @@ const Registration = () => {
 
       } catch (error) {
         console.log('請求發生錯誤:', error);
-        setMessenger("帳號重複")
-        setShowAlert(1)
-      } setTimeout(() => {
-        setShowAlert(0);
-      }, 1000)
+        alert("帳號重複")
+      }
     }
   };
 
@@ -81,26 +72,18 @@ const Registration = () => {
         setCurrentStep(2);
 
       } catch (error) {
-        const err = error.response.data.duplicateData
-        if (err) {
-          const mass = Object.values(err).join('\n')
-          // alert(mass)
-          setMessenger(mass)
-
-          setShowAlert(2)
-          setTimeout(() => {
-            setShowAlert(0);
-          }, 1000)
-        }
-      }
-    };
+        const err =error.response.data.duplicateData
+        if(err){
+          alert(Object.values(err).join('\n'))
+          
+          }
+    }
+  };
   }
   const registerchange = () => { };
 
   return (
     <div id='registerout'>
-      {showAlert === 1 && <AlertBox message={messenger} type="warning" />}
-      {showAlert === 2 && <AlertBox message={messenger} type="warning" />}
       <Row id='register' gutter={20} >
 
         <Col span={15}>
@@ -134,7 +117,7 @@ const Registration = () => {
         </Col>
 
         <Col span={9} >
-          <div className='reginertitle'>註冊</div>
+          <div className='reginertitle'>會員註冊</div>
           <Steps current={currentStep} className='col-10'
             style={{ paddingLeft: '30px' }}>
             <Step title="帳號密碼" />
@@ -249,9 +232,7 @@ const Registration = () => {
 
                   >
                     <DatePicker style={{ width: '100%' }} />
-
                   </Form.Item>
-
                 </Col>
                 <Col span={12}>
                   <Form.Item

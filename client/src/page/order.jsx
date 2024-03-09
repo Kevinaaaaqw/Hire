@@ -29,7 +29,7 @@ function Order() {
       <div id="logged-in-content" style={{ display: 'none' }}>
         <div className="bgset">
           <div className="text">
-            <div className="mctitle">| 會員中心 |</div>
+            <div className="title">| 會員中心 |</div>
             <div>訂單追蹤</div>
           </div>
           <Orderbtn displayedComponent={displayedComponent} handleButtonClick={handleButtonClick} />

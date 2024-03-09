@@ -25,7 +25,7 @@
     justify-content: center;
     margin: 0px;
     margin-left: 30px;
-
+    
     img {
       border-radius: 50%;
       height: 150px;
@@ -36,7 +36,7 @@
   .pd-body-m {
     width: 65%;
     // height: 80%;
-    .pd-body-m-title {
+    div:first-child {
       display: flex;
       align-items: center;
 
@@ -63,37 +63,31 @@
       opacity: 0.8;
     }
 
-    // button {
-    //   border-radius: 10px;
-    //   background-color: #fff;
-    //   border: 1px solid rgba(126, 126, 126, 0.866);
-    //   font-size: $font-xs;
-    //   i {
-    //     margin: 0px 5px;
-    //   }
-    //   &:first-child {
-    //     background-color: $main-color;
-    //     border-color: $main-color;
-    //     color: white;
-    //     width: 110px;
-    //     margin-right: 10px;
-    //     &:hover {
-    //       opacity: 0.8;
-    //     }
-    //   }
-    // }
-    .pd-body-btn {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+    button {
+      border-radius: 10px;
+      background-color: #fff;
+      border: 1px solid rgba(126, 126, 126, 0.866);
+      font-size: $font-xs;
+      i {
+        margin: 0px 5px;
+      }
+      &:first-child {
+        background-color: $main-color;
+        border-color: $main-color;
+        color: white;
+        width: 110px;
+        margin-right: 10px;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
     a {
-      text-align: center;
       padding: 0 20px;
-      width: 180px;
+      width: 200px;
       border: 1px solid $main-color;
       border-radius: 10px;
-      font-size: 24px;
+      font-size: $font-xs;
       color: $main-color;
       &:hover {
         background-color: rgba(0, 0, 0, 0.059);
@@ -101,14 +95,6 @@
       i {
         margin-left: 5px;
         color: black;
-      }
-    }
-    .cartFontSize {
-      height: 36px !important;
-      padding: 0 10px;
-      font-size: 24px;
-      &:last-child {
-        height: 50px !important;
       }
     }
   }

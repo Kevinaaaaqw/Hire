@@ -14,7 +14,7 @@ router.post('/api/google-login', async (req, res) => {
         });
         const payload = ticket.getPayload();
 
-        console.log(payload)
+
         res.json(payload);
     } catch (error) {
         console.error('Google 登入驗證失敗:', error);
@@ -25,16 +25,7 @@ router.post('/api/google-login', async (req, res) => {
 router.post('/api/google-account', (req, res) => {
     const googleuserdata = req.body.googleuserdata;
     console.log(googleuserdata)
-    const ratingsql = `
-    INSERT INTO userinfo SET
-    account = ?,
-    name = ?,
-    nickname = ?,
-    email = ?,
-    identityCard = UUID() ,
-    phoneNumber = UUID();`
-
-
+    const ratingsql = 'insert into userinfo(account,name,nickname,email) value (?,?,?,?)';
     conn.query(ratingsql, [googleuserdata.account, googleuserdata.name, googleuserdata.nickname, googleuserdata.email], (err, data) => {
         err ? console.log('插入失敗') : res.status(200).json(data)
     })
@@ -110,10 +101,8 @@ router.get('/api/productRating/:id', (req, res) => {
 
 
 //分類推薦
-router.get('/api/productsCategory', (req, res) => {
-    // const child = req.params.productCategoryChild;
-    const child = req.query.param1;
-    const productId = req.query.param2;
+router.get('/api/products/:productCategoryChild', (req, res) => {
+    const child = req.params.productCategoryChild;
     const query = `
         SELECT p.*, (
             SELECT im.imageSrc
@@ -126,16 +115,15 @@ router.get('/api/productsCategory', (req, res) => {
             SELECT pcm.productCategoryChild
             FROM productcategorymap AS pcm
             WHERE pcm.productCategoryId = (
-                SELECT productCategoryId
-                FROM productcategorymap
-                WHERE productCategoryChild = ?
+            SELECT productCategoryId
+            FROM productcategorymap
+            WHERE productCategoryChild = ?
             )
         )
-        AND p.productId NOT IN (?)
         ORDER BY RAND();
       
     `
-    conn.query(query, [child, productId], (err, data) => {
+    conn.query(query, [child], (err, data) => {
         err ? console.log('查詢失敗') : res.json(data)
     })
 })
@@ -145,15 +133,14 @@ router.get('/api/productsCategory', (req, res) => {
 router.get('/api/collect/:account', (req, res) => {
     const account = req.params.account
     const sql = `
-    SELECT p.*,
-       (SELECT im.imageSrc
+    SELECT  p.*,
+        (SELECT im.imageSrc
         FROM imagemap im
         WHERE im.productId = f.productId
         LIMIT 1) AS imageSrc
         FROM favorites f
         INNER JOIN product p ON p.productId = f.productId
         WHERE f.account = ?
-        ORDER BY f.createtime DESC;
     `
 
     conn.query(sql, [account], (err, data) => {

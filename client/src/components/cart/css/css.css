@@ -1,4 +1,4 @@
-:root {
+:root{
   --cartFontSize: 1.75rem;
 }
 body {
@@ -68,9 +68,8 @@ a {
 .subTitle {
   font-size: 2.5rem !important;
 }
-.cartFontSize,
-.ant-row {
-  font-size: 1.75rem;
+.cartFontSize,.ant-row {
+  font-size: 1.75rem ;
 }
 .changeActive {
   background-color: rgba(255, 255, 255, 0) !important;
@@ -85,7 +84,7 @@ a {
   padding: auto;
 }
 .ui-button {
-  font-size: 1.5rem;
+  font-size: 1.5rem ;
 }
 .cursorPointer {
   cursor: pointer;
@@ -121,21 +120,19 @@ a {
   align-items: center;
 }
 
-.fontWeight {
-  font-weight: 900;
+.fontWeight{
+  font-weight:900
 }
 
-.ant-select,
-.ant-select-selector,
-.ant-select-selector .ant-select-selection-item {
-  height: 50px;
+.ant-select,.ant-select-selector,.ant-select-selector .ant-select-selection-item{
+  height: 50px ;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
   /* font-weight:900; */
 }
-.ant-select-selector {
+.ant-select-selector{
   font-size: 1.7rem;
 }
 
@@ -145,7 +142,7 @@ a {
   width: 100%;
 }
 
-.line::after {
+.line::after{
   content: "";
   border-top: 2px dashed black;
   display: flex;
@@ -153,33 +150,24 @@ a {
   margin-bottom: 1rem;
 }
 
-.text-danger {
-  color: red;
+.text-danger{
+color: red;
 }
 
-.ChatBorderRadius {
-  border-radius: 200;
-  border-bottom-right-radius: 0;
-}
-
-.contentStyle {
+.contentStyle{
   text-align: center;
   border-radius: 10px;
-  border: 6px solid #0b7597;
+  border:6px solid #0B7597;
   margin-top: 30px;
 }
 
 /* 按鈕顏色 */
-.btnColor {
-  background-color: #d1dddb;
-}
-.btnColor2 {
-  background-color: white;
+.btnColor{
+  background-color: #D1DDDB;
 }
 /* 碰到按鈕 */
-.btnColor:hover,
-.btnColor2:hover {
-  background-color: #d1dddb9b;
+.btnColor:hover{
+  background-color: #d1dddb9b ;
   border: 1px solid black;
 }
 @media screen and (max-width: 1200px) {
@@ -208,7 +196,7 @@ a {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
   }
-  .displayNone {
+  .displayNone{
     display: none;
   }
   .imgActive2 {

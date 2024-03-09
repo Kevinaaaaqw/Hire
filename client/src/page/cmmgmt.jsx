@@ -28,7 +28,7 @@ function Cmmgmt() {
       <div id="logged-in-content" style={{ display: 'none' }}>
         <div className="bgset">
           <div className="text">
-            <div className="mctitle">| 會員中心 |</div>
+            <div className="title">| 會員中心 |</div>
             <div>商品管理</div>
           </div>
           <Cmgbtn displayedComponent={displayedComponent} handleButtonClick={handleButtonClick} />

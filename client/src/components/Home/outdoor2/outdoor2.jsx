@@ -35,21 +35,19 @@ function Outdoor2() {
     return (
         <>
             {/* 主頁畫面2 出租/租借 */}
-            <div className="outdoor2 blur" id='outdoor2pag' ref={od2AmiRL}>
+            <div className="outdoor2 blur" ref={od2AmiRL}>
 
                 <div className="outdoor2box1"></div>
 
                 <div className="split left" ref={od2AmiRight}>
                     <h1>出租商品</h1>
-                    {localStorage.getItem("userInfo")?( <Link to="/up" className="btn-100">explore</Link>):( <Link to="/login" className="btn-100">explore</Link>)}
-                   
+                    <Link to="/" className="btn-100">explore</Link>
                     {/* <p>與他人分享你的愛好,同時賺取額外收入</p> */}
                 </div>
 
                 <div className="split right" ref={od2AmiLeft}>
                     <h1>租借商品</h1>
-                    <Link to="/product" className="btn-100">explore</Link>
-                
+                    <Link to="/" className="btn-100">explore</Link>
                     {/* <p>與他人分享你的愛好,同時賺取額外收入</p> */}
                 </div>
             </div>

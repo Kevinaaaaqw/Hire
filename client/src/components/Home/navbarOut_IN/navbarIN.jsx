@@ -11,9 +11,7 @@ function NavbarIN() {
     const account = localStorage.getItem('userInfo').slice(1, -1)
     const loginout = () => {
         localStorage.clear()
-        setTimeout(() => {
-            window.location.href='/';
-        }, 100)
+        window.location.reload();
     }
     return (
 

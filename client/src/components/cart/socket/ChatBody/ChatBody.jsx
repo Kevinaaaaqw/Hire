@@ -80,13 +80,12 @@ export const ChatBody = ({
                     {message.date}
                   </div>
                   <div
-                    className=""
+                    className="test"
                     key={message.id}
                     style={{
                       maxWidth: "400px",
-                      backgroundColor: "#FFCF52",
-                      borderRadius: "200px",
-                      borderBottomRightRadius:"0",
+                      backgroundColor: "#ADFF2F",
+                      borderRadius: "10px",
                       marginRight: "10px",
                       paddingLeft: "10px",
                       paddingRight: "10px",
@@ -116,11 +115,10 @@ export const ChatBody = ({
                   <div
                     key={message.id}
                     style={{
-                      backgroundColor: "#D9D9D9",
+                      backgroundColor: "#DCDCDC",
                       maxWidth: "300px",
                       marginLeft:'10px',
-                      borderRadius: "200px",
-                      borderBottomLeftRadius:"0",
+                      borderRadius: "10px",
                       paddingLeft: "10px",
                       paddingRight: "10px",
                       wordBreak: "break-all",

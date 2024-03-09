@@ -4,7 +4,7 @@ import axios from 'axios';
 import './A_productCollcet.scss'
 
 import ProductCard from '../product/productCard';
-// import RatingInput from '../product-rating/ratingInput';
+import RatingInput from '../product-rating/ratingInput';
 
 
 function A_product_Collcet() {
@@ -51,7 +51,7 @@ function A_product_Collcet() {
             {ProductCollect.map((product) => (
               <div key={product.productId} className="col-md-4 pd-link">
                 <button className='D-btn' onClick={() => { productDelete(product.productId) }}>刪除 <i>&darr;</i> </button>
-                {/* <RatingInput productId={product.productId} /> */}
+                <RatingInput productId={product.productId} />
                 <Link target="_blank" to={`/productItem/${product.productId}`}>
                   <ProductCard product={product} />
                 </Link>

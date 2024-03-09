@@ -30,9 +30,9 @@ function Navbar2() {
                 <div className={style["header-button-icon"]}>
                     {/* 按鈕 */}
                     <ul className={style["header-button"]}>
-                    <li><Link className={style["btn-98"]} to="/product">租借列表</Link></li>
-                        {localStorage.getItem("userInfo")?(<li><Link className={style["btn-98"]} to="/up">快速上架</Link></li>):(<li><Link className={style["btn-98"]} to="/login">快速上架</Link></li>)}
-                        <li><Link className={style["btn-98"]} to="/aboutus">關於我們</Link></li>
+                        <li><Link className={style["btn-98"]} to="/product">租借列表</Link></li>
+                        <li><Link className={style["btn-98"]} to="/up">快速上架</Link></li>
+                        <li><Link className={style["btn-98"]} to="/">關於我們</Link></li>
                     </ul>
                     {/* icon */}
                     {username ? <NavbarIN /> : <NavbarOut />}

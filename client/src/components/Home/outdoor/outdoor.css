@@ -13,34 +13,24 @@
     /* border: 5px solid yellow; */
 }
 
-.outdoor img:nth-child(2){
-    /* border: 5px solid yellow; */
-    position: absolute;
-    z-index: 10;
-    width: 14VW;
-    top: 32%;
-    left: 47.1%;
-
-}
-
 /* --- outdoor 文字設定 --- */
 .outdoor-word {
     /* border: 2px red solid; */
     position: absolute;
-    top: 25%;
-    left: 15%;
+    top: 35%;
+    left: 4%;
 }
 
 .outdoor-word :first-child {
-    font-size: 10vw;
-    color: rgba(99, 99, 99, 0.779);
+    font-size: 4vw;
+    color: rgba(252, 252, 252, 0.779);
     margin-bottom: -0.5rem;
 
 }
 
 .outdoor-word :last-child {
-    font-size: 4vw;
-    color: rgb(99, 99, 99);
+    font-size: 2vw;
+    color: aliceblue;
     margin-top: -0.5rem;
 }
 
@@ -232,12 +222,4 @@
     100% {
         transform: scale(1);
     }
-}
-
-.rqu{
-    color: aliceblue;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-size: 1rem;
 }

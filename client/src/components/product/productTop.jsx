@@ -84,7 +84,6 @@ function ProductTop({ onSearchSubmit }) {
                     </option>
                   ))}
                 </select>
-                <div className="arrow-icon">&#x25BC;</div>
               </div>
               <div className="form-group">
                 <select
@@ -104,7 +103,6 @@ function ProductTop({ onSearchSubmit }) {
                       </option>
                     ))}
                 </select>
-                <div className="arrow-icon">&#x25BC;</div>
               </div>
               <div className="form-group">
                 <select
@@ -119,7 +117,6 @@ function ProductTop({ onSearchSubmit }) {
                     </option>
                   ))}
                 </select>
-                <div className="arrow-icon">&#x25BC;</div>
               </div>
 
               <div className="form-group">
@@ -141,7 +138,6 @@ function ProductTop({ onSearchSubmit }) {
                     return null;
                   })}
                 </select>
-                <div className="arrow-icon">&#x25BC;</div>
               </div>
             </div>
           </form>

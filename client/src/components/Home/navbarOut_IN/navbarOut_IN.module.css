@@ -1,17 +1,9 @@
-body ul li{
-    margin: 0;
-    padding: 0;
-}
-body ul{
-    margin: 0;
-    padding: 0;
-}
-
 /* -------------------------- */
 /* icon 底下選項 */
 .header-icon{
     /* border: 2px solid red; */
     height: 100%;
+    margin-right: 10px;
 }
 
 .header-icon .iconMove{
@@ -30,30 +22,29 @@ body ul{
 }
 .header-icon li{
     height: 100%;
+    /* width: 100%; */
 }
 
 /* 選單 style 設定 */
 ul.drop-menu{
+    /* border: 2px solid red; */
     position: absolute;
+    /* top: 16%; */
     right: 0%;
+    padding: 0;
     z-index: 100;
-    display: flex;
-    align-items: center;
 }
 
 ul.drop-menu li a{
-    color:black;
+    color:rgb(0, 0, 0);
     font-size: 1.3rem;
-    line-height: 2.3;
-    width:100%;
-    background-color: rgba(255, 255, 255, 1);
-    display: flex;
-    justify-content: center;
+    margin-right: 15px;
+    line-height: 2;
 }
 
 /* 選單出現跟消失 */
 ul.drop-menu li{
-    width:100%;
+    /* border: 1px solid blue; */
     display: none;
     /* 消失 */
 }

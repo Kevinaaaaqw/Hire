@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './productSellerCard.scss';
-
-import { ChatButtom } from '../cart/socket/socket';
-
 function ProductSellerCard(props) {
   const { productSeller } = props
   return (
@@ -12,28 +9,24 @@ function ProductSellerCard(props) {
         <div className="pd-flex">
           <div className="pd-body-l">
             <img
-              src={productSeller.profilePictureSrc ? (`http://localhost:8000/img/${productSeller.profilePictureSrc}`) : (`http://localhost:8000/img/noface/cafc10742b9b77da.jpg`)}
+              src={productSeller.profilePictureSrc?(`http://localhost:8000/img/${productSeller.profilePictureSrc}`):(`http://localhost:8000/img/noface/cafc10742b9b77da.jpg`)}
               alt=""
             />
           </div>
           <div className="pd-body-m">
-            <div className='pd-body-m-title'>
+            <div>
               <p>{productSeller.nickname}</p>
               <p>{productSeller.account}</p>
             </div>
-            <div >
+            <div className="pd-body-btn">
               <p>{productSeller.email}</p>
               {/* <button>
                 聊聊<i className="bi bi-chat-fill"> </i>
               </button> */}
-              <div className="pd-body-btn">
-
-                <Link target='_blank' to={`/productSeller/${productSeller.account}`}>
-                  出租商品一覽
-                  <i className="bi bi-house-fill" />
-                </Link>
-                <ChatButtom chatInfo={productSeller.account} />
-              </div>
+              <Link target='_blank' to={`/productSeller/${productSeller.account}`}>
+                出租商品一覽
+                <i className="bi bi-house-fill" />
+              </Link>
             </div>
           </div>
         </div>

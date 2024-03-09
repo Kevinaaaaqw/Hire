@@ -71,12 +71,11 @@ page.put("/cart", async (req, res) => {
         )}`,
         valuesList2,
         (err, result) => {
-          let insertLenght3 = "";
+          let insertLenght3 = "(";
           cartMapId.map((item) => {
-            insertLenght3 += item + " or ";
+            insertLenght3 += item + ",";
           });
-          insertLenght3 = insertLenght3.slice(0, -3);
-          console.log(insertLenght3)
+          insertLenght3 = insertLenght3.slice(0, -1) + ")";
           coon.query(
             `DELETE FROM cartmap WHERE cartmap.cartMapId = ${insertLenght3}`,
             [],
@@ -223,9 +222,9 @@ page.post("/getChatList", (req, res) => {
       result.map((item) => {
         req.body.account === item.account
           ? allRoom.push({
-            room: item.room,
-            productAccount: item.productAccount,
-          })
+              room: item.room,
+              productAccount: item.productAccount,
+            })
           : allRoom.push({ room: item.room, productAccount: item.account });
       });
       res.send(allRoom);
@@ -247,7 +246,7 @@ page.put("/upDateChatContain", (req, res) => {
   );
 });
 
-page.post("/upDateChatContain", async (req, res) => {
+page.post("/upDateChatContain", async(req, res) => {
   const sql = `SELECT * FROM chatroom  WHERE (account = ? AND productAccount = ?) OR (account = ? AND productAccount = ?);`;
   const account = req.body.account;
   const productAccount = req.body.productAccount;

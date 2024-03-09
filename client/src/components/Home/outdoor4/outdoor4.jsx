@@ -18,7 +18,7 @@ function Outdoor4() {
                 {/* 右邊框 */}
                 <div className="outdoor4-right" />
                 {/* 按鈕 */}
-                <Link to="../../aboutus" className="btn-about">
+                <Link to="" className="btn-about">
                     <p className="btn-about-p">關於我們</p>
                 </Link>
             </div>

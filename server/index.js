@@ -28,12 +28,18 @@ app.use('/', login)
 const member = require('./routes/memeber')
 app.use('/',member)
 
+app.get("/api/members/:account", (req, res) => {
+  const memberData = req.body;
+  const selectQuery = `SELECT * FROM userinfo WHERE account = ?`;
 
-
-const send = require('./routes/send')
-app.use("/",send)
-
-
+  coon.query(
+    "SELECT * FROM userinfo WHERE account=?",
+    [req.params.account],
+    function (err, rows) {
+      res.send(JSON.stringify(rows));
+    }
+  );
+});
 
 app.listen(8000, function () {
   // console.clear()

@@ -48,7 +48,6 @@ export const checkForm = async (newstate) => {
       .then((res) => {
         newstate.current = 2;
         newstate.tradeId = res.data;
-        console.log(newstate.tradeId)
       });
   }
   return newstate;
